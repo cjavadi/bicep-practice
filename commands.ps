@@ -1,0 +1,6 @@
+az group create --name "rg-practice" --location "southindia"
+az deployment group create --resource-group "rg-practice" --template-file vm.bicep --parameters adminUsername=azureadmin
+
+az deployment group list --resource-group rg-practice --output table
+
+az deployment group delete --resource-group rg-practice --name vm
